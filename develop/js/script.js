@@ -1,6 +1,8 @@
 //Load the important things
 var searchBtn = document.getElementById('search-btn');
 
+// Event Listeners/Main Navigation
+
 // Define the current date
 
 // Get the current weather
