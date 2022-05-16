@@ -20,8 +20,8 @@ var getLocation = function(){
 
 // Get the current weather
 var getWeather = function(locationName) {
-    // Load api url
-    var apiUrl = 
+    // Load city lat and long
+    var apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=8ecea19ce0d607abe128e080200901d8`;
     // fetch request to API
     fetch(apiUrl).then(function(response) {
         // it worked! 
@@ -40,8 +40,12 @@ var getWeather = function(locationName) {
     });
 };
 // Display Weather
-        //Current Weather
+var displayWeather = function (data, locationName) {
+    //Current Weather
+    document.querySelector("#current-icon").innerHTML = `<img src='http://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png' >
 
-        // Future Forcast 
+
+    // Future Forcast
+} 
 
 // Load Search History
