@@ -21,18 +21,28 @@ var getLocation = function(){
 // Get the current weather
 var getWeather = function(locationName) {
     // Load city lat and long
-    var apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=8ecea19ce0d607abe128e080200901d8`;
-    // fetch request to API
+    var apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${locationName}&units=imperial&appid=8ecea19ce0d607abe128e080200901d8`;
+    // Fetch city Lat/Long
     fetch(apiUrl).then(function(response) {
         // it worked! 
         if (response.ok) {
             response.json().then(function(data) {
-            console.log(data)
-            displayWeather(data, locationName)
-            });
-        // oopsie it's not working
-        } else {
-            window.alert("Sorry, we can't seem to find that location");
+                // fetch full weather data
+                var apiFullUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&units=imperial&exclude=minutely,hourly&appid=8ecea19ce0d607abe128e080200901d8`;
+                // fetch request for full data
+                fetch(apiFullUrl).then(function(response) {
+                    //successful request
+                    if (response.ok) {
+                        response.json().then(function(information) {
+                            // run the following functions
+                            displayWeather(data, information);
+                            displayFuture(information);
+                        })
+                    }
+                })
+            } else {
+                window.alert("Sorry, we can't seem to find that location");
+            }
         }
     })
     .catch(function(error) {
