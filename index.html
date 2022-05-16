@@ -13,15 +13,38 @@
 </head>
 
 <body>
-    <!--Header-->
+<!--Header-->
 <div class="text-center d-flex" id="header-container">
-    <div class="col-12 center" id="title-text">
-        <h1>Weather Dashboard</h1>
+    <header class="col-12 center">
+        <h1 id="title-text">Weather Dashboard</h1>
+    </header>
+</div>
+<!--Search Bar Section-->
+<div class="col-3" id="full-search">
+    <p id="search-text">
+        Search for a City:
+    </p>
+    <input type="text" id="user-input" placeholder="type current city..."></input>
+    <button type="button" id="search-btn">Search</button>
+<!--Recent Search Section-->
+    <div id="search-history">
+
     </div>
 </div>
-    <!--Search Bar Section-->
 
+<!--Current Weather-->
+<div class="col-9">
+    <!--Current City Forcast-->
+    <div id="today-container">
+        <div id="current-icon"></div>
+        <p> Temp: <span id="temp-now"></span></p>
+        <p> Wind: <span id="wind-now"></span></p>
+        <p> Humidity: <span id="humidity-now"></span></p>
+        <p> UV Index: <span id="uv-index-now"></span></p>
+    </div>
     <!--5 Day Weather Dashboard-->
+</div>
+
 
 <!--Links to JS File-->
 <script src="./develop/js/script.js"></script>
