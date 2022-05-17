@@ -3,8 +3,16 @@ var searchBtn = document.getElementById('search-btn');
 var location = document.getElementById('location-input');
 
 // Event Listeners/Main Navigation
+searchBtn.addEventListener("click", function(){
+    getLocation();
+});
 
 // Define the current date
+const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const date = new Date();
+let month = months[date.getMonth()];
+let day = date.getDate()
+let currentDate = `${month}, ${day}`
 
 // Gets the city name from search box
 var getLocation = function(){
@@ -39,11 +47,9 @@ var getWeather = function(locationName) {
     });
 };
 // Display Weather
-var displayWeather = function (data, locationName) {
+var displayWeather = function(data, locationName){
     //Current Weather
-    document.querySelector("#current-icon").innerHTML = `<img src='http://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`>
-    
+    document.querySelector("#current-icon").innerHTML = `<img src='http://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png' >`
     // Future Forcast
-} 
-
+}
 // Load Search History
