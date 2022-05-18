@@ -52,4 +52,10 @@ var displayWeather = function(data, locationName){
     document.querySelector("#current-icon").innerHTML = `<img src='http://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png' >`
     // Future Forcast
 }
+
+// Save history to local storage
+var cityHistory = function(locationName) {
+    // Already in storage?
+    // If no add to storage. 
+};
 // Load Search History
