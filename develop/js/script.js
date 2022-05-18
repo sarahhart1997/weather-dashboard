@@ -5,9 +5,9 @@ var todayDashboard = document.getElementById('today-container');
 
 // Current day span objects (hardcode)
 var tempNow = document.getElementById('temp-now');
+var feelsLike = document.getElementById('feels-like');
 var windNow = document.getElementById('wind-now');
 var humidityNow = document.getElementById('humidity-now');
-var uviNow = document.getElementById('uv-index-now');
 
 // Event Listeners/Main Navigation
 searchBtn.addEventListener("click", function(){
@@ -57,7 +57,11 @@ var getWeather = function(locationName) {
 var displayWeather = function(data, locationName){
     //Current Weather
     document.querySelector("#current-icon").innerHTML = `<img src='http://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png' >`
-    tempNow.textContent=data.main.temp;
+    tempNow.textContent=`Temp: ${data.main.temp} \u00B0F`;
+    feelsLike.textContent=`Temp: ${data.main.feels_like} \u00B0F`;
+    windNow.textContent=`Wind: ${data.wind.speed} mph`;
+    humidityNow.textContent=`Humidity: ${data.main.humidity} %`;
+
     // Future Forcast
 }
 
