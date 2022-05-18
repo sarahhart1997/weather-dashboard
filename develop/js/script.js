@@ -1,6 +1,13 @@
 //Load the important things
 var searchBtn = document.getElementById('search-btn');
 var locationInput = document.getElementById('location-input');
+var todayDashboard = document.getElementById('today-container');
+
+// Current day span objects (hardcode)
+var tempNow = document.getElementById('temp-now');
+var windNow = document.getElementById('wind-now');
+var humidityNow = document.getElementById('humidity-now');
+var uviNow = document.getElementById('uv-index-now');
 
 // Event Listeners/Main Navigation
 searchBtn.addEventListener("click", function(){
@@ -50,6 +57,7 @@ var getWeather = function(locationName) {
 var displayWeather = function(data, locationName){
     //Current Weather
     document.querySelector("#current-icon").innerHTML = `<img src='http://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png' >`
+    tempNow.textContent(data.current.temp);
     // Future Forcast
 }
 
