@@ -1,3 +1,11 @@
+/* Base color definitions */ 
+:root {
+    --first-color: white;
+    --second-color: #8d38c9;
+    --third-color: #460a70;
+    --fourth-color: #702e0a;
+    --fith-color: #bd5922;
+}
 /* Video Background */
 video {
     /* Making the video background size */
@@ -26,4 +34,16 @@ video {
     align-items: center;
     justify-content: center;
   }
-  
+
+/* Main content styling */
+body {
+    color: var(--fith-color);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Header styling */
+header {
+    position: sticky;
+    background-color: var(--third-color);
+    padding: 10px;
+}
