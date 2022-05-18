@@ -1,6 +1,6 @@
 //Load the important things
 var searchBtn = document.getElementById('search-btn');
-var location = document.getElementById('location-input');
+var locationInput = document.getElementById('location-input');
 
 // Event Listeners/Main Navigation
 searchBtn.addEventListener("click", function(){
@@ -16,7 +16,7 @@ let currentDate = `${month}, ${day}`
 
 // Gets the city name from search box
 var getLocation = function(){
-    var locationName = location.value.trim();
+    var locationName = locationInput.value.trim();
     if(locationName) {
         getWeather(locationName);
         // clear search
