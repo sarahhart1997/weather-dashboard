@@ -57,9 +57,7 @@ var getWeather = function(locationName) {
 var displayWeather = function(data, locationName){
     //Current Weather
     document.querySelector("#current-icon").innerHTML = `<img src='http://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png' >`
-    tempNow.textContent=data.current.temp;
-    windNow.textContent()
-
+    tempNow.textContent=data.main.temp;
     // Future Forcast
 }
 
